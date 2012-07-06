@@ -1,0 +1,5509 @@
+<!doctype html>
+<html lang="en">
+        <head>
+           <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+           <title>jQuery UI Tabs - Default functionality</title>
+                <link rel="stylesheet" href="../../css/core.css" type="text/css" media="screen" />
+                <link rel="stylesheet" href="../../css/layout.css" type="text/css" media="screen" />
+
+                <link rel="stylesheet" href="../../css/ui/jquery-ui.css" type="text/css" media="screen" />
+                <link type="text/css" href="../../themes/base/ui.theme.css" rel="stylesheet" />
+                <script type="text/javascript" src="../../js/jquery.js"></script>
+                <script type="text/javascript" src="../../js/external/bgiframe/jquery.bgiframe.js"></script>
+                <script type="text/javascript" src="../../js/ui/jquery-ui.js"></script>
+                <script type="text/javascript" src="../../js/ui/i18n/jquery-ui-i18n.js"></script>
+
+                <link type="text/css" href="../../css/widget/widget.grid.css" rel="stylesheet" />
+                <script type="text/javascript" src="../../js/widget/widget.grid.js"></script>
+
+                <link type="text/css" href="../demos.css" rel="stylesheet" />
+                <script type="text/javascript">
+                        $(function() {
+                                        $("#grid").grid();
+                                        });
+                                </script>
+                        </head>
+                        <body>
+
+                                <div class="demo">
+
+                                        <div class="ui-grid-wrap"><table class="res ui-grid ui-widget ui-widget-content ui-corner-all ui-helper-reset" id="grid">
+                                                        <thead>
+                                                                <tr class="ui-widget-header ui-grid-header">
+                                                                        <th class="ui-grid-select ui-grid-fixed">
+                                                                                <input class="checkbox" id="select_all" name="select_all" type="checkbox" value="1" />
+                                                                        </th>
+
+                                                                        <th class="resource_ping">
+
+                                                                                <a href="/resources?sort=ping">PING状态</a>      
+
+                                                                        </th>
+
+
+                                                                        <th class="resource_snmp">
+
+                                                                                <a href="/resources?sort=snmp">SNMP状态</a>      
+
+                                                                        </th>
+
+                                                                        <th class="resource_name ui-grid-freeze">
+
+
+
+                                                                                <a href="/resources?sort=name&amp;sort_dir=DESC">设备名称</a>      
+                                                                                <em class="ui-icon ui-icon-triangle-1-s"></em>
+                                                                        </th>
+
+                                                                        <th class="resource_ip">
+
+                                                                                <a href="/resources?sort=ip">IP</a>      
+
+                                                                        </th>
+
+
+                                                                        <th class="resource_subnet_mask">
+
+                                                                                <a href="/resources?sort=subnet_mask">子网掩码</a>      
+
+                                                                        </th>
+
+                                                                        <th class="resource_model_number">
+
+                                                                                <a href="/resources?sort=model_number">设备型号</a>      
+
+                                                                        </th>
+
+                                                                        <th class="resource_vendor">
+
+                                                                                <a href="/resources?sort=vendor">设备厂家</a>      
+
+                                                                        </th>
+
+
+                                                                        <th class="resource_snmp_write ui-grid-more">
+
+                                                                                <a href="/resources?sort=snmp_write">SNMP读团体名</a>      
+
+                                                                        </th>
+
+                                                                        <th class="resource_snmp_read ui-grid-more">
+
+                                                                                <a href="/resources?sort=snmp_read">SNMP写团体名</a>      
+
+                                                                        </th>
+
+                                                                        <th class="resource_fixed_number ui-grid-more">
+
+                                                                                <a href="/resources?sort=fixed_number">固定资产编号</a>      
+
+                                                                        </th>
+
+
+                                                                        <th class="resource_serial_number ui-grid-more">
+
+                                                                                <a href="/resources?sort=serial_number">设备序列号</a>      
+
+                                                                        </th>
+
+                                                                        <th class="resource_region_id ui-grid-more">
+
+                                                                                <a href="/resources?sort=region_id">机房</a>      
+
+                                                                        </th>
+
+                                                                        <th class="resource_up_device_ip ui-grid-more">
+
+                                                                                <a href="/resources?sort=up_device_ip">上联设备IP</a>      
+
+                                                                        </th>
+
+
+                                                                        <th class="resource_up_device_port ui-grid-more">
+
+                                                                                <a href="/resources?sort=up_device_port">上联设备端口</a>      
+
+                                                                        </th>
+
+                                                                        <th class="resource_local_port ui-grid-more">
+
+                                                                                <a href="/resources?sort=local_port">本端端口</a>      
+
+                                                                        </th>
+
+                                                                        <th class="resource_local_odf ui-grid-more">
+
+                                                                                <a href="/resources?sort=local_odf">本端ODF</a>      
+
+                                                                        </th>
+
+
+                                                                        <th class="resource_relative_odf ui-grid-more">
+
+                                                                                <a href="/resources?sort=relative_odf">对端ODF</a>      
+
+                                                                        </th>
+
+                                                                        <th class="resource_resource_type_id ui-grid-more">
+
+                                                                                <a href="/resources?sort=resource_type_id">设备类型</a>      
+
+                                                                        </th>
+
+                                                                        <th class="ui-grid-actions ui-grid-fixed ui-grid-more">&nbsp;</th>
+                                                                </tr>
+                                                        </thead>
+
+                                                        <tfoot><tr class="ui-grid-scrollbar"><th colspan="20"><div><p><span style="width:250%;">scrollbar</span></p></div></th></tr></tfoot><tbody>
+
+                                                                <tr class=" ui-grid-even">
+                                                                        <td class="ui-grid-select ui-grid-fixed">
+                                                                                <input class="checkbox" id="ids_4" name="ids[4]" type="checkbox" value="1" />
+                                                                        </td>
+
+
+                                                                        <td class="resource_ping">
+                                                                                &nbsp
+                                                                        </td>
+
+
+
+                                                                        <td class="resource_snmp">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_name ui-grid-freeze ui-state-highlight">
+                                                                                dfdgdg dgd 
+                                                                        </td>
+
+
+                                                                        <td class="resource_ip">
+
+                                                                        </td>
+
+
+                                                                        <td class="resource_subnet_mask">
+
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_model_number">
+
+                                                                        </td>
+
+
+                                                                        <td class="resource_vendor">
+
+                                                                        </td>
+
+
+                                                                        <td class="resource_snmp_write ui-grid-more">
+                                                                                &nbsp
+                                                                        </td>
+
+
+
+                                                                        <td class="resource_snmp_read ui-grid-more">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_fixed_number ui-grid-more">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_serial_number ui-grid-more">
+                                                                                &nbsp
+                                                                        </td>
+
+
+
+                                                                        <td class="resource_region_id ui-grid-more">
+                                                                                五里河机房
+                                                                        </td>
+
+
+                                                                        <td class="resource_up_device_ip ui-grid-more">
+
+                                                                        </td>
+
+
+                                                                        <td class="resource_up_device_port ui-grid-more">
+
+                                                                        </td>
+
+
+                                                                        <td class="resource_local_port ui-grid-more">
+                                                                                &nbsp
+
+                                                                        </td>
+
+
+                                                                        <td class="resource_local_odf ui-grid-more">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_relative_odf ui-grid-more">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_resource_type_id ui-grid-more">
+                                                                                交换机
+                                                                        </td>
+
+
+                                                                        <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+                                                                                <a href="/resources/4/edit">编辑</a>&nbsp;<a href="/resources/4" class="delete" id="4">删除</a>
+                                                                        </td>
+                                                                </tr>
+
+                                                                <tr class=" ui-grid-odd ui-state-light">
+                                                                        <td class="ui-grid-select ui-grid-fixed">
+                                                                                <input class="checkbox" id="ids_3" name="ids[3]" type="checkbox" value="1" />
+                                                                        </td>
+
+
+
+                                                                        <td class="resource_ping">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_snmp">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_name ui-grid-freeze ui-state-highlight">
+                                                                                fdg
+                                                                        </td>
+
+
+
+                                                                        <td class="resource_ip">
+
+                                                                        </td>
+
+
+                                                                        <td class="resource_subnet_mask">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_model_number">
+
+                                                                        </td>
+
+
+                                                                        <td class="resource_vendor">
+                                                                                dfg
+                                                                        </td>
+
+
+
+                                                                        <td class="resource_snmp_write ui-grid-more">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_snmp_read ui-grid-more">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_fixed_number ui-grid-more">
+                                                                                &nbsp
+                                                                        </td>
+
+
+
+                                                                        <td class="resource_serial_number ui-grid-more">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_region_id ui-grid-more">
+                                                                                五里河机房
+                                                                        </td>
+
+
+                                                                        <td class="resource_up_device_ip ui-grid-more">
+
+                                                                        </td>
+
+
+                                                                        <td class="resource_up_device_port ui-grid-more">
+
+
+                                                                        </td>
+
+
+                                                                        <td class="resource_local_port ui-grid-more">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_local_odf ui-grid-more">
+                                                                                &nbsp
+                                                                        </td>
+
+
+                                                                        <td class="resource_relative_odf ui-grid-more">
+                                                                                &nbsp
+
+                                                                        </td>
+
+
+                                                                        <td class="resource_resource_type_id ui-grid-more">
+                                                                                交换机
+                                                                        </td>
+
+                                                                        <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+                                                                                <a href="/resources/3/edit">编辑</a>&nbsp;<a href="/resources/3" class="delete" id="3">删除</a>
+                                                                        </td>
+                                                                </tr>
+
+
+                                                                <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_2" name="ids[2]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                gete
+              </td>
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                fgdg
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                dfgdg
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+
+              <a href="/resources/2/edit">编辑</a>&nbsp;<a href="/resources/2" class="delete" id="2">删除</a>
+            </td>
+          </tr>
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_5" name="ids[5]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                nineit
+              </td>
+            
+              
+              <td class="resource_ip">
+
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_model_number">
+                dfgdg
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                滑翔机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/5/edit">编辑</a>&nbsp;<a href="/resources/5" class="delete" id="5">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_27" name="ids[27]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/27/edit">编辑</a>&nbsp;<a href="/resources/27" class="delete" id="27">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_28" name="ids[28]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/28/edit">编辑</a>&nbsp;<a href="/resources/28" class="delete" id="28">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_29" name="ids[29]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/29/edit">编辑</a>&nbsp;<a href="/resources/29" class="delete" id="29">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_30" name="ids[30]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/30/edit">编辑</a>&nbsp;<a href="/resources/30" class="delete" id="30">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_31" name="ids[31]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/31/edit">编辑</a>&nbsp;<a href="/resources/31" class="delete" id="31">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_32" name="ids[32]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/32/edit">编辑</a>&nbsp;<a href="/resources/32" class="delete" id="32">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_33" name="ids[33]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/33/edit">编辑</a>&nbsp;<a href="/resources/33" class="delete" id="33">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_34" name="ids[34]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/34/edit">编辑</a>&nbsp;<a href="/resources/34" class="delete" id="34">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_35" name="ids[35]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/35/edit">编辑</a>&nbsp;<a href="/resources/35" class="delete" id="35">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_36" name="ids[36]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/36/edit">编辑</a>&nbsp;<a href="/resources/36" class="delete" id="36">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_37" name="ids[37]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/37/edit">编辑</a>&nbsp;<a href="/resources/37" class="delete" id="37">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_38" name="ids[38]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/38/edit">编辑</a>&nbsp;<a href="/resources/38" class="delete" id="38">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_39" name="ids[39]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/39/edit">编辑</a>&nbsp;<a href="/resources/39" class="delete" id="39">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_40" name="ids[40]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/40/edit">编辑</a>&nbsp;<a href="/resources/40" class="delete" id="40">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_41" name="ids[41]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/41/edit">编辑</a>&nbsp;<a href="/resources/41" class="delete" id="41">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_42" name="ids[42]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/42/edit">编辑</a>&nbsp;<a href="/resources/42" class="delete" id="42">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_43" name="ids[43]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/43/edit">编辑</a>&nbsp;<a href="/resources/43" class="delete" id="43">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_44" name="ids[44]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/44/edit">编辑</a>&nbsp;<a href="/resources/44" class="delete" id="44">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_45" name="ids[45]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/45/edit">编辑</a>&nbsp;<a href="/resources/45" class="delete" id="45">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_46" name="ids[46]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/46/edit">编辑</a>&nbsp;<a href="/resources/46" class="delete" id="46">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_47" name="ids[47]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/47/edit">编辑</a>&nbsp;<a href="/resources/47" class="delete" id="47">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_48" name="ids[48]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/48/edit">编辑</a>&nbsp;<a href="/resources/48" class="delete" id="48">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_49" name="ids[49]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/49/edit">编辑</a>&nbsp;<a href="/resources/49" class="delete" id="49">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_50" name="ids[50]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/50/edit">编辑</a>&nbsp;<a href="/resources/50" class="delete" id="50">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_51" name="ids[51]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/51/edit">编辑</a>&nbsp;<a href="/resources/51" class="delete" id="51">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_52" name="ids[52]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/52/edit">编辑</a>&nbsp;<a href="/resources/52" class="delete" id="52">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_53" name="ids[53]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/53/edit">编辑</a>&nbsp;<a href="/resources/53" class="delete" id="53">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_54" name="ids[54]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/54/edit">编辑</a>&nbsp;<a href="/resources/54" class="delete" id="54">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_55" name="ids[55]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/55/edit">编辑</a>&nbsp;<a href="/resources/55" class="delete" id="55">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_56" name="ids[56]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwer
+              </td>
+            
+              
+              <td class="resource_ip">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_model_number">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_vendor">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                路由器
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/56/edit">编辑</a>&nbsp;<a href="/resources/56" class="delete" id="56">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_6" name="ids[6]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                niwirwew
+              </td>
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                ddg
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+
+                滑翔机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/6/edit">编辑</a>&nbsp;<a href="/resources/6" class="delete" id="6">删除</a>
+            </td>
+          </tr>
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_7" name="ids[7]" type="checkbox" value="1" />
+            </td>
+
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/7/edit">编辑</a>&nbsp;<a href="/resources/7" class="delete" id="7">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_8" name="ids[8]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/8/edit">编辑</a>&nbsp;<a href="/resources/8" class="delete" id="8">删除</a>
+
+            </td>
+          </tr>
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_9" name="ids[9]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/9/edit">编辑</a>&nbsp;<a href="/resources/9" class="delete" id="9">删除</a>
+            </td>
+          </tr>
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_10" name="ids[10]" type="checkbox" value="1" />
+            </td>
+
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/10/edit">编辑</a>&nbsp;<a href="/resources/10" class="delete" id="10">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_11" name="ids[11]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/11/edit">编辑</a>&nbsp;<a href="/resources/11" class="delete" id="11">删除</a>
+
+            </td>
+          </tr>
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_12" name="ids[12]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/12/edit">编辑</a>&nbsp;<a href="/resources/12" class="delete" id="12">删除</a>
+            </td>
+          </tr>
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_13" name="ids[13]" type="checkbox" value="1" />
+            </td>
+
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/13/edit">编辑</a>&nbsp;<a href="/resources/13" class="delete" id="13">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_14" name="ids[14]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/14/edit">编辑</a>&nbsp;<a href="/resources/14" class="delete" id="14">删除</a>
+
+            </td>
+          </tr>
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_15" name="ids[15]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/15/edit">编辑</a>&nbsp;<a href="/resources/15" class="delete" id="15">删除</a>
+            </td>
+          </tr>
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_16" name="ids[16]" type="checkbox" value="1" />
+            </td>
+
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/16/edit">编辑</a>&nbsp;<a href="/resources/16" class="delete" id="16">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_17" name="ids[17]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/17/edit">编辑</a>&nbsp;<a href="/resources/17" class="delete" id="17">删除</a>
+
+            </td>
+          </tr>
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_18" name="ids[18]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/18/edit">编辑</a>&nbsp;<a href="/resources/18" class="delete" id="18">删除</a>
+            </td>
+          </tr>
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_19" name="ids[19]" type="checkbox" value="1" />
+            </td>
+
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/19/edit">编辑</a>&nbsp;<a href="/resources/19" class="delete" id="19">删除</a>
+            </td>
+          </tr>
+
+        
+          <tr class=" ui-grid-even">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_20" name="ids[20]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/20/edit">编辑</a>&nbsp;<a href="/resources/20" class="delete" id="20">删除</a>
+
+            </td>
+          </tr>
+        
+          <tr class=" ui-grid-odd ui-state-light">
+            <td class="ui-grid-select ui-grid-fixed">
+              <input class="checkbox" id="ids_21" name="ids[21]" type="checkbox" value="1" />
+            </td>
+            
+              
+              <td class="resource_ping">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_snmp">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_name ui-grid-freeze ui-state-highlight">
+                sdgdfgdgf
+              </td>
+            
+              
+              <td class="resource_ip">
+                
+              </td>
+            
+              
+              <td class="resource_subnet_mask">
+
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_model_number">
+                
+              </td>
+            
+              
+              <td class="resource_vendor">
+                
+              </td>
+            
+              
+              <td class="resource_snmp_write ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_snmp_read ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_fixed_number ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_serial_number ui-grid-more">
+                &nbsp
+              </td>
+
+            
+              
+              <td class="resource_region_id ui-grid-more">
+                五里河机房
+              </td>
+            
+              
+              <td class="resource_up_device_ip ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_up_device_port ui-grid-more">
+                
+              </td>
+            
+              
+              <td class="resource_local_port ui-grid-more">
+                &nbsp
+
+              </td>
+            
+              
+              <td class="resource_local_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_relative_odf ui-grid-more">
+                &nbsp
+              </td>
+            
+              
+              <td class="resource_resource_type_id ui-grid-more">
+                交换机
+              </td>
+
+            
+            <td class="ui-grid-actions ui-grid-fixed ui-grid-more">
+              <a href="/resources/21/edit">编辑</a>&nbsp;<a href="/resources/21" class="delete" id="21">删除</a>
+            </td>
+          </tr>
+        
+      
+    </tbody>
+  </table></div>
+
+        </div><!-- End demo -->
+
+        <div class="demo-description">
+
+                <p>Click tabs to swap between content that is broken into logical sections.</p>
+
+        </div><!-- End demo-description -->
+
+</body>
+</html>
