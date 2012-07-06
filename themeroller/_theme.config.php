@@ -221,7 +221,7 @@ function get_src($color,$name='name',$opacity='opactiy'){
       $oldname = $name;
       $name = $themes[$name];
       $opacity = $themes[$opacity];
-      $name = split('/',$name);
+      $name = explode('/',$name);
       $name = $name[count($name)-1];
       $image = $textures_hash[$name];
       $src = texture_src($color,$image,$opacity);
@@ -241,11 +241,11 @@ function get_name($color,$name='name',$opacity='opactiy'){
       $oldname = $name;
       $name = $themes[$name];
       $opacity = $themes[$opacity];
-      $name = split('/',$name);
+      $name = explode('/',$name);
       $name = $name[count($name)-1];
       $image = $textures_hash[$name];
       $n = str_replace('.png','',$image["value"]);
-      $n = split('_',$n);
+      $n = explode('_',$n);
       array_shift($n);
       $n = join('_',$n);
       return "ui-bg_".$n."_".$opacity."_".$color."_".$image["width"]."x".$image["height"].".png";
@@ -271,7 +271,7 @@ function texture_bg($color,$name='name',$opacity='opactiy'){
       $oldname = $name;
       $name = $themes[$name];
       $opacity = $themes[$opacity];
-      $name = split('/',$name);
+      $name = explode('/',$name);
       $name = $name[count($name)-1];
       $image = $textures_hash[$name];
       if(isset($download)){
@@ -301,7 +301,7 @@ function texture_select($name,$selected=''){
 }
 /*
 $href = 'ffDefault=Verdana,Arial,sans-serif&fwDefault=normal&fsDefault=1.23em&cornerRadius=4.1px&bgColorHeader=ccc345&bgTextureHeader=01_flat.png&bgImgOpacityHeader=75.2&borderColorHeader=a11212&fcHeader=406ac4&iconColorHeader=915f5f&bgColorContent=cde797&bgTextureContent=07bdiagonals_medium.png&bgImgOpacityContent=72.9&borderColorContent=c643d0&fcContent=5faace&iconColorContent=789f2d&bgColorDefault=1d0606&bgTextureDefault=02_glass.png&bgImgOpacityDefault=74.4&borderColorDefault=d3d3d3&fcDefault=691111&iconColorDefault=a82cb5&bgColorHover=7d1eb3&bgTextureHover=08_diagonals_thick.png&bgImgOpacityHover=77.11&borderColorHover=df2a8d&fcHover=ee81a6&iconColorHover=d6b3c4&bgColorActive=f9c3f9&bgTextureActive=14_loop.png&bgImgOpacityActive=66.4&borderColorActive=e76e6e&fcActive=df4949&iconColorActive=7e1616&bgColorHighlight=14120b&bgTextureHighlight=19_layered_circles.png&bgImgOpacityHighlight=52.9&borderColorHighlight=fcefa1&fcHighlight=ca869e&iconColorHighlight=2e83ff&bgColorError=f7c0ab&bgTextureError=20_3D_boxes.png&bgImgOpacityError=95.7&borderColorError=f4b4b4&fcError=d4b0b0&iconColorError=683131&bgColorOverlay=e8b0b0&bgTextureOverlay=22_spotlight.png&bgImgOpacityOverlay=21.8&opacityOverlay=10.2&bgColorShadow=c25151&bgTextureShadow=23_fine_grain.png&bgImgOpacityShadow=5.3&opacityShadow=30.7&thicknessShadow=8.2px&offsetTopShadow=-8.6px&offsetLeftShadow=-8.5px&cornerRadiusShadow=8.3px';
-$t = split('&',$href);
+$t = explode('&',$href);
 $s = $href;
 $s = str_replace('&',"\",\n\"",$s);
 $s = str_replace('=','"=>"',$s);

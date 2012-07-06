@@ -31,7 +31,7 @@ include_once('_theme.config.php');
 	//ui-bg_glass_55_fbf9ee_1x400  ui-bg_name_opacity_color_widthxheight.png
 	//ui-icons_222222_256x240.png
 	//print_r($themes);
-	$url = split('/',$_SERVER["HTTP_REFERER"]);
+	$url = explode('/',$_SERVER["HTTP_REFERER"]);
 	array_pop($url);
 	$url = join("/",$url);
 	$src = get_src("bgColorLayout","bgTextureLayout","bgImgOpacityLayout");
@@ -62,16 +62,14 @@ foreach($themes as $theme=>$val){
 	  $img_opacity = str_replace("Texture","ImgOpacity",$theme);
 	  $img_path = $themeimages."/".get_name($img_color,$theme,$img_opacity);
 	  $img_url = $url.'/'.get_src($img_color,$theme,$img_opacity);
-          $img_url = $img_url.'&save='.$img_path;
 	  $cont = file_get_contents($img_url);
-	  //file_put_contents($img_path,$cont);	
+	  file_put_contents($img_path,$cont);
 	}
 	if(strstr($theme,"icon")){
-   	  $img_path = $themeimages."/".get_name($theme);
+	  $img_path = $themeimages."/".get_name($theme);
 	  $img_url = $url.'/'.get_src($theme);
-          $img_url = $img_url.'&save='.$img_path;
 	  $cont = file_get_contents($img_url);
-	  //file_put_contents($img_path,$cont);
+	  file_put_contents($img_path,$cont);
 	}
 
      }

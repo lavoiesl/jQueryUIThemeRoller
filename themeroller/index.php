@@ -4,7 +4,7 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <title>Themeroller Developer Tool</title>
-      <?php include_once('_head.php')?>
+      <?php include_once('_head.php'); ?>
       <script src="developertool.js.php" type="text/javascript"></script>
       <script src="static/demos.js" type="text/javascript"></script>
       <style>
@@ -16,122 +16,12 @@
          }
       </style>
       </head><body>
-      <div id="wrapper" class="ui-layout">
-         <div id="header" class="ui-toolbar">
-            <div id="header-inner" class="clearfix">
-               <div id="logo">
-                  <a href="/"><span class="f3">OPENGOSS</span><br />->user interface</a>
-               </div>
-               <div id="navbar">
-                  <div id="subnav" class="clearfix">
-                     <div id="unused">
-                        <a href="/administrator">administrator</a><span class="pipe">|</span>
-                        <a href="/logout" title="退出">退出</a>
-                     </div>
-                  </div>
-                  <ul id="navigation" class="ul">
-                     <li class="ui-corner-top ui-state-active"><a href="/dashboard">首页</a></li>
-                     <li><a href="../demos/" target="_blank">JQ UI demos</a></li>
-                  </ul>
-                  <div id="basic-search">
-                     <form action="/search">
-                        <span id="basic-search-wrap" class="ui-input ui-corner-all"><label class="ui-icon ui-icon-search" for="basic-search-q"></label><input id="basic-search-q" type="text" name="q" class="text"/></span>
-                     </form>
-                  </div>
-
-               </div>
-            </div>
-
-         </div>
 
          <div id="content" class="clearfix has-sidebar">
-            <div id="sidebar">
-               <ul id="menu">
-                  <li class="ui-menu-open">
-                  <h3> 
-                     <a href='index.php'><em class="icon icon-dashboard">icon</em><span>Form</span></a>
-                  </h3>
-                  <ol>
-                     <li><a href="/">HP Unix@202.12.33.09</a></li>
-                     <li class="ui-state-light"><a href="/dashboard/view">FreeBSD@102.12.3.09</a></li>
-                     <li><a href="/dashboard/view">Solaris@212.12.3.09</a></li>
 
-                  </ol>    
-                  </li>
-                  <li class="ui-menu-separator"><hr /></li>
-                  <li class="ui-menu-open">
-                  <h3> 
-                     <a href='index.php'><em class="icon icon-dashboard">icon</em><span>Widgets</span></a>
-                  </h3>
-                  <ol>
-                     <li><a href="/">menu</a></li>
-                     <li><a href="/dashboard/view">grid</a></li>
-                  </ol>    
-                  </li> 
-                  <li>
-                  <h3> 
-                     <a href='index.php'><em class="icon icon-dashboard">icon</em><span>快速导航</span></a>
-                  </h3>
-                  <ol>
-                     <li><a href="/">HP Unix@202.12.33.09</a></li>
-                     <li><a href="/dashboard/view">FreeBSD@102.12.3.09</a></li>
-                     <li><a href="/dashboard/view">Solaris@212.12.3.09</a></li>
-                  </ol>    
-                  </li> 
-                  <li>
-                  <h3> 
-                     <a href='index.php'><em class="icon icon-dashboard">icon</em><span>快速导航</span></a>
-                  </h3>
-                  <ol>
-                     <li><a href="/">HP Unix@202.12.33.09</a></li>
-                     <li><a href="/dashboard/view">FreeBSD@102.12.3.09</a></li>
-                     <li><a href="/dashboard/view">Solaris@212.12.3.09</a></li>
-                  </ol>    
-                  </li> 
-
-               </ul>
-            </div>
             <div id="widebar" class="clearfix" >
-               <div id="screen-meta">
-                  <div id="screen-options">
-                     <h3>在屏幕上显示</h3>
-                     <form action="" method="get">
-                        <div class="metabox-prefs">
 
-
-                           <label for="resource_equipment_name"><input name="resource[equipment_name]" type="checkbox" id="resource_equipment_name" value="" checked="checked" />设备名称</label>
-
-                           <label for="resource_factroy"><input name="resource[factroy]" type="checkbox" id="resource_factroy" value="" checked="checked" />设备厂家</label>
-
-
-                           <label for="resource_ip"><input name="resource[ip]" type="checkbox" id="resource_ip" value="" checked="checked" />IP</label>
-
-
-                        </div>
-                     </form>
-                  </div>
-
-                  <div id="contextual-help">
-                     <h3>获取“控制板”帮助</h3>
-
-                     <div class="metabox-prefs">
-                        <p>这个页面上的大部分组件都是可以移动的，如果组件可以移动，您把鼠标指针放到一个组件的标题上指针会变成十字，那么您可以拖拽这个组件到一个新位置。当您拖拽的时候会有一灰色虚线框同时移动，这个框就是你松开鼠标后组件将移动到的新位置。</p>
-                     </div>
-
-                  </div>
-                  <ul id="screen-meta-tabs">
-                     <li><a href="#contextual-help">帮助<em class="ui-icon ui-icon-carat-1-s"></em></a></li>
-                     <li><a href="#screen-options">显示选项<em class="ui-icon ui-icon-carat-1-s"></em></a></li>
-                  </ul>
-               </div>
-
-               <?php //include('_themeRoller.php');?>
                <div id="widebar-inner" class="clearfix">
-                  <div class="f3">
-                  <a href="bb">link</a>
-                  <a href="bb">hhhhhhhhhhhhhhh</a>
-                  </div>
-
                   <div class="clearfix demo-col">
 
                      <!-- Pagination -->
